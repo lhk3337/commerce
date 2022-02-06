@@ -2,6 +2,7 @@ export interface ProductItem {
   id: number;
   title: string;
   price: number;
+  bgcolor: string;
   colors: { code: string; img: any }[];
 }
 export interface ProductType {

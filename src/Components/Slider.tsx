@@ -10,12 +10,12 @@ const Slider = ({ products }: ProductType) => {
           return (
             <S.SliderItem key={product.id}>
               <S.Img src={product.colors[0].img} alt="" />
-              <S.sliderBg></S.sliderBg>
+              <S.sliderBg bgcolor={product.bgcolor} />
               <S.Title>
                 {product.title.toUpperCase()} <br /> NEW <br />
                 SEASON
               </S.Title>
-              <S.Price>${product.price}</S.Price>
+              <S.Price color={product.bgcolor}>${product.price}</S.Price>
               <S.BuyLink>
                 <S.BuyBtn>BUY NOW!</S.BuyBtn>
               </S.BuyLink>

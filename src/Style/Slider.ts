@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 export const Slider = styled.div`
   height: 800px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
@@ -23,11 +22,11 @@ export const SliderItem = styled.div`
 export const Img = styled.img`
   z-index: 1;
 `;
-export const sliderBg = styled.div`
+export const sliderBg = styled.div<{ bgcolor: string }>`
   width: 750px;
   height: 750px;
   border-radius: 50%;
-  background-color: #369e62;
+  background-color: ${(props) => props.bgcolor};
   position: absolute;
 `;
 export const Title = styled.h1`
@@ -44,7 +43,7 @@ export const Title = styled.h1`
   z-index: 1;
 `;
 
-export const Price = styled.h2`
+export const Price = styled.h2<{ color: string }>`
   position: absolute;
   top: 15%;
   left: 10%;
@@ -54,7 +53,7 @@ export const Price = styled.h2`
   color: white;
   border: 1px solid gray;
   z-index: 1;
-  color: #369e62;
+  color: ${(props) => props.color};
 `;
 export const BuyLink = styled.a``;
 export const BuyBtn = styled.button`

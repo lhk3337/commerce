@@ -18,6 +18,7 @@ export const products = [
     id: 1,
     title: "Air Force",
     price: 119,
+    bgcolor: "#369e62",
     colors: [
       {
         code: "black",
@@ -33,6 +34,7 @@ export const products = [
     id: 2,
     title: "Air Jordan",
     price: 149,
+    bgcolor: "rebeccapurple",
     colors: [
       {
         code: "lightgray",
@@ -48,6 +50,7 @@ export const products = [
     id: 3,
     title: "Blazer",
     price: 109,
+    bgcolor: "teal",
     colors: [
       {
         code: "lightgray",
@@ -63,6 +66,7 @@ export const products = [
     id: 4,
     title: "Crater",
     price: 129,
+    bgcolor: "cornflowerblue",
     colors: [
       {
         code: "black",
@@ -78,6 +82,7 @@ export const products = [
     id: 5,
     title: "Hippie",
     price: 99,
+    bgcolor: "#7c7350",
     colors: [
       {
         code: "gray",
