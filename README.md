@@ -8,6 +8,20 @@
 - [ ] 각 데이터 별로 타입 지정
 - [ ] redux를 이용하여 Header 메뉴 클릭 시 이벤트 클릭하면 그 데이터를 Slider Component로 상태 정보 넘겨주기
 
-## 참조 강의
+## 단일 props의 type을 지정할때 선언하기
+
+```ts
+export const sliderBg = styled.div<{ bgcolor: string }>`
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background-color: ${(props) => props.bgcolor};
+  position: absolute;
+`;
+```
+
+## 참조
+
+[ts styled-components type 설정](https://velog.io/@hwang-eunji/styled-component-typescript)
 
 [Lama Dev Youtube](https://www.youtube.com/watch?v=b3Gqq_k-g24&t=414s)
