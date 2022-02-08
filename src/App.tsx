@@ -3,6 +3,7 @@ import Header from "Components/Header";
 import Footer from "Components/Footer";
 import Slider from "Components/Slider";
 import Feature from "Components/Feature";
+import NewSeason from "Components/NewSeason";
 
 import GlobalStyle from "Style/GlobalStyle";
 import { products } from "assets/data/products";
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Slider products={products} />
       <Feature features={features} />
+      <NewSeason />
       <Footer />
     </>
   );
