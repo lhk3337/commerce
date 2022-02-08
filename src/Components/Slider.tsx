@@ -1,11 +1,12 @@
 import React from "react";
 import * as S from "Style/Slider";
+import { useSelector } from "react-redux";
 import { ProductType, ProductItem } from "types";
 const Slider = ({ products }: ProductType) => {
-  console.log(products);
+  const number = useSelector((state: any) => state);
   return (
     <S.Slider>
-      <S.SliderWrapper>
+      <S.SliderWrapper widthSize={number}>
         {products.map((product: ProductItem) => {
           return (
             <S.SliderItem key={product.id}>
