@@ -4,23 +4,7 @@ import search from "assets/img/search.png";
 import * as S from "Style/Header";
 import { useDispatch, connect } from "react-redux";
 import { actionCreators } from "redux/store";
-interface IBtn {
-  Btn1: () => {
-    type: string;
-  };
-  Btn2: () => {
-    type: string;
-  };
-  Btn3: () => {
-    type: string;
-  };
-  Btn4: () => {
-    type: string;
-  };
-  Btn5: () => {
-    type: string;
-  };
-}
+import { IBtn } from "types";
 const Header = ({ Btn1, Btn2, Btn3, Btn4, Btn5 }: IBtn) => {
   // const dispatch = useDispatch();
   // const onClickBtn1 = () => {
