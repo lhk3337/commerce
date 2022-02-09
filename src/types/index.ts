@@ -7,9 +7,9 @@ export type NumberAction =
   | ReturnType<typeof Btn4>
   | ReturnType<typeof Btn5>;
 
-export type StateType = {
+export interface StateType {
   number: number;
-};
+}
 
 // Component/Slider.tsx
 export interface ProductItem {
