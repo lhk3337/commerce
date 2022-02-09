@@ -6,7 +6,7 @@ export const Slider = styled.div`
   background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
 `;
 
-export const SliderWrapper = styled.div<{ widthSize: any }>`
+export const SliderWrapper = styled.div<{ widthSize: number }>`
   display: flex;
   width: 500vw;
   transition: all 1.5s ease-in-out;
