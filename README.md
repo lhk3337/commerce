@@ -41,6 +41,12 @@ const BTN3 = "BTN3";
 const BTN4 = "BTN4";
 const BTN5 = "BTN5";
 
+const Btn1 = () => ({ type: "BTN1" }); //action 생성 함수
+const Btn2 = () => ({ type: "BTN2" });
+const Btn3 = () => ({ type: "BTN3" });
+const Btn4 = () => ({ type: "BTN4" });
+const Btn5 = () => ({ type: "BTN5" });
+
 const reducer = (state: any, action: any) => {
   // reducer
   if (state === undefined) {
@@ -67,6 +73,15 @@ const reducer = (state: any, action: any) => {
 const store = createStore(reducer); // create Store
 
 export default store;
+
+export const actionCreators = {
+  //action 생성 함수 export
+  Btn1,
+  Btn2,
+  Btn3,
+  Btn4,
+  Btn5,
+};
 ```
 
 ### Provider 설정
@@ -97,24 +112,26 @@ ReactDOM.render(
 
 ```tsx
 import { useDispatch } from "react-redux";
-
+import { actionCreators } from "redux/store";
 const Header = () => {
-  const dispatch = useDispatch(); // useDispatch 선언
+  const dispatch = useDispatch();  // useDispatch 선언
   const onClickBtn1 = () => {
-    dispatch({ type: "BTN1" }); //dispatch 설정
+    dispatch(actionCreators.Btn1());  // dispatch 설정
   };
   const onClickBtn2 = () => {
-    dispatch({ type: "BTN2" }); //dispatch 설정
+    dispatch(actionCreators.Btn2());
   };
   const onClickBtn3 = () => {
-    dispatch({ type: "BTN3" });
+    dispatch(actionCreators.Btn3());
   };
   const onClickBtn4 = () => {
-    dispatch({ type: "BTN4" });
+    dispatch(actionCreators.Btn4());
   };
   const onClickBtn5 = () => {
-    dispatch({ type: "BTN5" });
+    dispatch(actionCreators.Btn5());
   };
+
+
   return (
   // ...
       <S.MenuItem onClick={onClickBtn1}>AIR FORCE</S.MenuItem> //버튼 클릭시 dispatch 실행
