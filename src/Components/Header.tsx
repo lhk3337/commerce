@@ -2,25 +2,42 @@ import React from "react";
 import logo from "assets/img/sneakers.png";
 import search from "assets/img/search.png";
 import * as S from "Style/Header";
-import { useDispatch } from "react-redux";
+import { useDispatch, connect } from "react-redux";
 import { actionCreators } from "redux/store";
-const Header = () => {
-  const dispatch = useDispatch();
-  const onClickBtn1 = () => {
-    dispatch(actionCreators.Btn1());
+interface IBtn {
+  Btn1: () => {
+    type: string;
   };
-  const onClickBtn2 = () => {
-    dispatch(actionCreators.Btn2());
+  Btn2: () => {
+    type: string;
   };
-  const onClickBtn3 = () => {
-    dispatch(actionCreators.Btn3());
+  Btn3: () => {
+    type: string;
   };
-  const onClickBtn4 = () => {
-    dispatch(actionCreators.Btn4());
+  Btn4: () => {
+    type: string;
   };
-  const onClickBtn5 = () => {
-    dispatch(actionCreators.Btn5());
+  Btn5: () => {
+    type: string;
   };
+}
+const Header = ({ Btn1, Btn2, Btn3, Btn4, Btn5 }: IBtn) => {
+  // const dispatch = useDispatch();
+  // const onClickBtn1 = () => {
+  //   dispatch(actionCreators.Btn1());
+  // };
+  // const onClickBtn2 = () => {
+  //   dispatch(actionCreators.Btn2());
+  // };
+  // const onClickBtn3 = () => {
+  //   dispatch(actionCreators.Btn3());
+  // };
+  // const onClickBtn4 = () => {
+  //   dispatch(actionCreators.Btn4());
+  // };
+  // const onClickBtn5 = () => {
+  //   dispatch(actionCreators.Btn5());
+  // };
 
   return (
     <S.Nav>
@@ -38,15 +55,15 @@ const Header = () => {
       </S.NavTop>
       <S.NavBottom>
         <S.Menu>
-          <S.MenuItem onClick={onClickBtn1}>AIR FORCE</S.MenuItem>
-          <S.MenuItem onClick={onClickBtn2}>JORDAN</S.MenuItem>
-          <S.MenuItem onClick={onClickBtn3}>BLAZER</S.MenuItem>
-          <S.MenuItem onClick={onClickBtn4}>CRATER</S.MenuItem>
-          <S.MenuItem onClick={onClickBtn5}>HIPPIE</S.MenuItem>
+          <S.MenuItem onClick={Btn1}>AIR FORCE</S.MenuItem>
+          <S.MenuItem onClick={Btn2}>JORDAN</S.MenuItem>
+          <S.MenuItem onClick={Btn3}>BLAZER</S.MenuItem>
+          <S.MenuItem onClick={Btn4}>CRATER</S.MenuItem>
+          <S.MenuItem onClick={Btn5}>HIPPIE</S.MenuItem>
         </S.Menu>
       </S.NavBottom>
     </S.Nav>
   );
 };
 
-export default Header;
+export default connect(null, actionCreators)(Header);
