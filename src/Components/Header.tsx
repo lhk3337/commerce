@@ -3,22 +3,23 @@ import logo from "assets/img/sneakers.png";
 import search from "assets/img/search.png";
 import * as S from "Style/Header";
 import { useDispatch } from "react-redux";
+import { actionCreators } from "redux/store";
 const Header = () => {
   const dispatch = useDispatch();
   const onClickBtn1 = () => {
-    dispatch({ type: "BTN1" });
+    dispatch(actionCreators.Btn1());
   };
   const onClickBtn2 = () => {
-    dispatch({ type: "BTN2" });
+    dispatch(actionCreators.Btn2());
   };
   const onClickBtn3 = () => {
-    dispatch({ type: "BTN3" });
+    dispatch(actionCreators.Btn3());
   };
   const onClickBtn4 = () => {
-    dispatch({ type: "BTN4" });
+    dispatch(actionCreators.Btn4());
   };
   const onClickBtn5 = () => {
-    dispatch({ type: "BTN5" });
+    dispatch(actionCreators.Btn5());
   };
 
   return (
