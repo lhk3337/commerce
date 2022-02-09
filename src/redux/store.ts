@@ -1,33 +1,35 @@
 import { createStore } from "redux";
+
 import { composeWithDevTools } from "redux-devtools-extension";
+import { NumberAction, StateType } from "../types";
+const BTN1 = "BTN1" as const;
+const BTN2 = "BTN2" as const;
+const BTN3 = "BTN3" as const;
+const BTN4 = "BTN4" as const;
+const BTN5 = "BTN5" as const;
 
-const BTN1 = "BTN1";
-const BTN2 = "BTN2";
-const BTN3 = "BTN3";
-const BTN4 = "BTN4";
-const BTN5 = "BTN5";
+export const Btn1 = () => ({ type: "BTN1" });
+export const Btn2 = () => ({ type: "BTN2" });
+export const Btn3 = () => ({ type: "BTN3" });
+export const Btn4 = () => ({ type: "BTN4" });
+export const Btn5 = () => ({ type: "BTN5" });
 
-const Btn1 = () => ({ type: "BTN1" });
-const Btn2 = () => ({ type: "BTN2" });
-const Btn3 = () => ({ type: "BTN3" });
-const Btn4 = () => ({ type: "BTN4" });
-const Btn5 = () => ({ type: "BTN5" });
+const initialState: StateType = {
+  number: 0,
+};
 
-const reducer = (state: any, action: any) => {
-  if (state === undefined) {
-    return 0;
-  }
+const reducer = (state: StateType = initialState, action: NumberAction) => {
   switch (action.type) {
     case BTN1:
-      return 0;
+      return { number: 0 };
     case BTN2:
-      return -100;
+      return { number: -100 };
     case BTN3:
-      return -200;
+      return { number: -200 };
     case BTN4:
-      return -300;
+      return { number: -300 };
     case BTN5:
-      return -400;
+      return { number: -400 };
     default:
       return state;
   }
