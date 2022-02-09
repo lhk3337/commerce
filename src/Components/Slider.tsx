@@ -1,9 +1,9 @@
 import React from "react";
 import * as S from "Style/Slider";
-import { useSelector } from "react-redux";
-import { ProductType, ProductItem } from "types";
-const Slider = ({ products }: ProductType) => {
-  const number = useSelector((state: any) => state);
+import { useSelector, connect } from "react-redux";
+import { ProductType, ProductItem, StateType } from "types";
+const Slider = ({ number, products }: any) => {
+  // const number = useSelector((state: StateType) => state.number);
   return (
     <S.Slider>
       <S.SliderWrapper widthSize={number}>
@@ -28,4 +28,8 @@ const Slider = ({ products }: ProductType) => {
   );
 };
 
-export default Slider;
+// export default Slider;
+
+export default connect((state: StateType, { products }: ProductType) => {
+  return { number: state.number, products };
+}, null)(Slider);
