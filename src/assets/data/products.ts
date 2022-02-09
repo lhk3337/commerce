@@ -13,7 +13,7 @@ import crater2 from "assets/img/crater2.png";
 import hippie1 from "assets/img/hippie.png";
 import hippie2 from "assets/img/hippie2.png";
 
-export const products = [
+const products = [
   {
     id: 1,
     title: "Air Force",
@@ -95,3 +95,5 @@ export const products = [
     ],
   },
 ];
+
+export default products;

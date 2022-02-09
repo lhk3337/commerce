@@ -7,8 +7,8 @@ import NewSeason from "Components/NewSeason";
 import Gallery from "Components/Gallery";
 
 import GlobalStyle from "Style/GlobalStyle";
-import { products } from "assets/data/products";
-import { features } from "assets/data/features";
+import products from "assets/data/products";
+import features from "assets/data/features";
 function App() {
   return (
     <>

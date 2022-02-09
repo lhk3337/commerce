@@ -3,7 +3,7 @@ import refund from "assets/img/return.png";
 import gift from "assets/img/gift.png";
 import contact from "assets/img/contact.png";
 
-export const features = [
+const features = [
   {
     id: 0,
     img: shipping,
@@ -14,3 +14,4 @@ export const features = [
   { id: 2, img: gift, title: "GIFT CARDS", desc: "Buy gift cards and use coupon codes easily." },
   { id: 3, img: contact, title: "CONTACT US!", desc: "Keep in touch via email and support system." },
 ];
+export default features;
