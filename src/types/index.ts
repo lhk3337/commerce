@@ -7,16 +7,18 @@ export type NumberAction =
   | ReturnType<typeof Btn4>
   | ReturnType<typeof Btn5>;
 
-export interface StateType {
-  number: number;
-}
-
 // Component/Slider.tsx
 export interface ProductItem {
   id: number;
   title: string;
   price: number;
   bgcolor: string;
+  colors: { code: string; img: any }[];
+}
+export interface StateType {
+  number: number;
+  price: number;
+  title: string;
   colors: { code: string; img: any }[];
 }
 export interface ProductType {
