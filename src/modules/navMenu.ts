@@ -1,5 +1,5 @@
 import products from "../assets/data/products";
-import { NumberAction, StateType } from "../types";
+import { NumberAction, StateType } from "types";
 const BTN1 = "BTN1" as const;
 const BTN2 = "BTN2" as const;
 const BTN3 = "BTN3" as const;
