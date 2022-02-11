@@ -1,5 +1,5 @@
 // redux/store.ts
-import { Btn1, Btn2, Btn3, Btn4, Btn5 } from "../redux/store";
+import { Btn1, Btn2, Btn3, Btn4, Btn5 } from "../modules/navMenu";
 export type NumberAction =
   | ReturnType<typeof Btn1>
   | ReturnType<typeof Btn2>
@@ -21,6 +21,11 @@ export interface StateType {
   title: string;
   colors: { code: string; img: any }[];
 }
+
+export interface navMenuType {
+  navMenu: StateType;
+}
+
 export interface ProductType {
   products: ProductItem[];
 }

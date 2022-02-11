@@ -1,6 +1,4 @@
-import { createStore } from "redux";
 import products from "../assets/data/products";
-import { composeWithDevTools } from "redux-devtools-extension";
 import { NumberAction, StateType } from "../types";
 const BTN1 = "BTN1" as const;
 const BTN2 = "BTN2" as const;
@@ -21,7 +19,7 @@ const initialState: StateType = {
   colors: products[0].colors,
 };
 
-const reducer = (state: StateType = initialState, action: NumberAction) => {
+const navMenu = (state: StateType = initialState, action: NumberAction) => {
   switch (action.type) {
     case BTN1:
       return { number: 0, price: products[0].price, title: products[0].title, colors: products[0].colors };
@@ -38,9 +36,7 @@ const reducer = (state: StateType = initialState, action: NumberAction) => {
   }
 };
 
-const store = createStore(reducer, composeWithDevTools());
-
-export default store;
+export default navMenu;
 
 export const actionCreators = {
   Btn1,

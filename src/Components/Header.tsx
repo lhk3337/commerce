@@ -3,7 +3,7 @@ import logo from "assets/img/sneakers.png";
 import search from "assets/img/search.png";
 import * as S from "Style/Header";
 import { useDispatch, connect } from "react-redux";
-import { actionCreators } from "redux/store";
+import { actionCreators } from "modules/navMenu";
 import { IBtn } from "types";
 const Header = ({ Btn1, Btn2, Btn3, Btn4, Btn5 }: IBtn) => {
   // const dispatch = useDispatch();

@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "Style/Product";
 import { useSelector, connect } from "react-redux";
-import { StateType, Icolor } from "types";
-import { useState } from "react";
+import { navMenuType, Icolor } from "types";
 
 const Product = ({ title, price, colors }: any) => {
   const [imgUrl, setImgUrl] = useState(0);
@@ -64,6 +63,6 @@ const Product = ({ title, price, colors }: any) => {
   );
 };
 
-export default connect((state: StateType) => {
-  return { title: state.title, price: state.price, colors: state.colors };
+export default connect((state: navMenuType) => {
+  return { title: state.navMenu.title, price: state.navMenu.price, colors: state.navMenu.colors };
 }, null)(Product);

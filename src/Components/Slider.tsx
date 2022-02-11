@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "Style/Slider";
 import { useSelector, connect } from "react-redux";
-import { ProductType, ProductItem, StateType } from "types";
+import { ProductType, ProductItem, navMenuType } from "types";
 const Slider = ({ number, products }: any) => {
   // const number = useSelector((state: StateType) => state.number);
   return (
@@ -30,6 +30,6 @@ const Slider = ({ number, products }: any) => {
 
 // export default Slider;
 
-export default connect((state: StateType, { products }: ProductType) => {
-  return { number: state.number, products };
+export default connect((state: navMenuType, { products }: ProductType) => {
+  return { number: state.navMenu.number, products };
 }, null)(Slider);
