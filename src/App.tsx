@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Header from "Components/Header";
 import Footer from "Components/Footer";
 import Slider from "Components/Slider";
@@ -11,13 +11,18 @@ import products from "assets/data/products";
 import features from "assets/data/features";
 import Product from "Components/Product";
 function App() {
+  const downRef = useRef<HTMLDivElement>(null);
+  const scrollDown = () => {
+    return downRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <GlobalStyle />
       <Header />
-      <Slider products={products} />
+      <Slider products={products} scrollDown={scrollDown} />
       <Feature features={features} />
-      <Product />
+      <Product ref={downRef} />
       <Gallery />
       <NewSeason />
       <Footer />

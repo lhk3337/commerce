@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, forwardRef } from "react";
 import * as S from "Style/Product";
 import { useSelector, connect } from "react-redux";
 import { navMenuType, Icolor } from "types";
 import visa from "assets/img/visa.png";
 import master from "assets/img/master.png";
 
-const Product = ({ title, price, colors }: any) => {
+const Product = forwardRef(({ title, price, colors }: any, ref: any) => {
   const [imgUrl, setImgUrl] = useState(0);
 
   const [boolColor1, setBoolColor1] = useState(true);
@@ -47,7 +47,7 @@ const Product = ({ title, price, colors }: any) => {
   };
 
   return (
-    <S.Container>
+    <S.Container ref={ref}>
       <S.ProductImg src={colors[imgUrl].img} />
       <S.ProductDetails>
         <S.ProductTitle>{title}</S.ProductTitle>
@@ -100,8 +100,13 @@ const Product = ({ title, price, colors }: any) => {
       ) : null}
     </S.Container>
   );
-};
+});
 
-export default connect((state: navMenuType) => {
-  return { title: state.navMenu.title, price: state.navMenu.price, colors: state.navMenu.colors };
-}, null)(Product);
+export default connect(
+  (state: navMenuType) => {
+    return { title: state.navMenu.title, price: state.navMenu.price, colors: state.navMenu.colors };
+  },
+  null,
+  null,
+  { forwardRef: true }
+)(Product);

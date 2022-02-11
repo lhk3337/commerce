@@ -32,6 +32,7 @@ export interface navMenuType {
 
 export interface ProductType {
   products: ProductItem[];
+  scrollDown: Function;
 }
 
 export interface FeatureItem {
