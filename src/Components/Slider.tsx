@@ -4,6 +4,12 @@ import { useSelector, connect } from "react-redux";
 import { ProductType, ProductItem, navMenuType } from "types";
 const Slider = ({ number, products }: any) => {
   // const number = useSelector((state: StateType) => state.number);
+  const onBuyClick = () => {
+    window.scrollTo({
+      top: 1294,
+      behavior: "smooth",
+    });
+  };
   return (
     <S.Slider>
       <S.SliderWrapper widthSize={number}>
@@ -18,7 +24,7 @@ const Slider = ({ number, products }: any) => {
               </S.Title>
               <S.Price color={product.bgcolor}>${product.price}</S.Price>
               <S.BuyLink>
-                <S.BuyBtn>BUY NOW!</S.BuyBtn>
+                <S.BuyBtn onClick={onBuyClick}>BUY NOW!</S.BuyBtn>
               </S.BuyLink>
             </S.SliderItem>
           );
