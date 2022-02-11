@@ -13,105 +13,15 @@
 
 ## Slider Component의 버튼 클릭 시 Product Component의 위치로 스크롤 이동 구현
 
-<br />
-
-### 현재 구현 방식
-
-`Slider.tsx`
-
-```ts
-const onBuyClick = () => {
-  window.scrollTo({
-    top: 1294,
-    behavior: "smooth",
-  });
-};
-```
-
-### forwardRef로 구현 하기
-
-`App.tsx`
-
-```ts
-import React, { useRef } from "react";
-...
-function App() {
-  const downRef = useRef<HTMLDivElement>(null);
-  const scrollDown = () => {
-    return downRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-  ...
-  return(
-    ...
-    <Slider products={products} scrollDown={scrollDown} />
-    ...
-    <Product ref={downRef} /> // Product Component에 props로 ref 넘겨주기(Product Component 위치로 스크롤이 이동하려면 ref를 넘겨주어야 한다.)
-    ...
-  )
-}
-```
-
-`Product.tsx`
-
-```ts
-import React, { useEffect, useState, forwardRef } from "react";
-import { connect } from "react-redux";
-...
-const Product = forwardRef(({ title, price, colors }: any, ref: any) => { // forwardRef 이용해서 App.tsx에서 props로 ref받기
-  ...
-
-  return(
-      <S.Container ref={ref}> // Product Container의 ref
-          ...
-      </S.Container>
-  )
-}
-
-export default connect(
-  (state: navMenuType) => {
-    return { title: state.navMenu.title, price: state.navMenu.price, colors: state.navMenu.colors };
-  },
-  null,
-  null,
-  { forwardRef: true } // connect에서 forwardRef를 활성화
-)(Product);
-```
-
-`Slider.tsx`
-
-```ts
-const Slider = ({ number, products, scrollDown }: any) => {
- ...
-  return(
-    ...
-     <S.BuyBtn onClick={() => scrollDown()}>BUY NOW!</S.BuyBtn>
-    ...
-  )
-
-}
-export default connect((state: navMenuType, { products, scrollDown }: ProductType) => {
-  return { number: state.navMenu.number, products, scrollDown }; // scrollDown은 App.tsx에서 설정한 위치로 스크롤 이동 함수
-}, null)(Slider);
-
-```
+[스크롤 이동 구현 - wiki](https://github.com/lhk3337/commerce/wiki/%EB%B2%84%ED%8A%BC-%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EB%8F%99-%EA%B5%AC%ED%98%84)
 
 <br />
-
-## 단일 props의 type을 지정할때 선언하기
-
-```ts
-export const sliderBg = styled.div<{ bgcolor: string }>`
-  width: 750px;
-  height: 750px;
-  border-radius: 50%;
-  background-color: ${(props) => props.bgcolor};
-  position: absolute;
-`;
-```
 
 ## Redux-react
 
-[redux 설정](https://github.com/lhk3337/commerce/wiki/redux%EC%84%A4%EC%A0%95)
+[redux 설정 - wiki](https://github.com/lhk3337/commerce/wiki/redux%EC%84%A4%EC%A0%95)
+
+<br />
 
 ## 참조
 
