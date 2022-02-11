@@ -34,7 +34,6 @@ export const sliderBg = styled.div<{ bgcolor: string }>`
 export const Title = styled.h1`
   color: white;
   position: absolute;
-  margin: 50px 0px;
   letter-spacing: -3px;
   line-height: 70px;
   top: 10%;
