@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -15,7 +14,14 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
 }
 
- ${reset}
+html, body{
+  font-family: "Lato", sans-serif;
+  margin:0;
+  padding:0;
+}
+li{
+  list-style: none;
+}
 a{
   text-decoration:none;
   color:inherit
