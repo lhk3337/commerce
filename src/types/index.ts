@@ -1,11 +1,15 @@
-// redux/store.ts
-import { Btn1, Btn2, Btn3, Btn4, Btn5 } from "../modules/navMenu";
+import { Btn1, Btn2, Btn3, Btn4, Btn5 } from "modules/navMenu";
+import { Scroll } from "modules/scrollSize";
+// modules/navMenu.ts
 export type NumberAction =
   | ReturnType<typeof Btn1>
   | ReturnType<typeof Btn2>
   | ReturnType<typeof Btn3>
   | ReturnType<typeof Btn4>
   | ReturnType<typeof Btn5>;
+
+// modules.scroll.ts
+export type scrollAction = ReturnType<typeof Scroll>;
 
 // Component/Slider.tsx
 export interface ProductItem {
