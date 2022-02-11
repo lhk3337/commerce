@@ -55,3 +55,10 @@ export interface IBtn {
     type: string;
   };
 }
+
+// Component/Product.tsx
+
+export interface Icolor {
+  code: string;
+  img: any;
+}

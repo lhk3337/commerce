@@ -9,6 +9,7 @@ import Gallery from "Components/Gallery";
 import GlobalStyle from "Style/GlobalStyle";
 import products from "assets/data/products";
 import features from "assets/data/features";
+import Product from "Components/Product";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <Slider products={products} />
       <Feature features={features} />
+      <Product />
       <Gallery />
       <NewSeason />
       <Footer />
