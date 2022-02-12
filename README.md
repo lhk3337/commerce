@@ -11,7 +11,7 @@
 
 <br />
 
-## Slider Component의 버튼 클릭 시 Product Component의 위치로 스크롤 이동 구현
+## 스크롤 이동 구현(forwardRef)
 
 [스크롤 이동 구현 - wiki](https://github.com/lhk3337/commerce/wiki/%EB%B2%84%ED%8A%BC-%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EB%8F%99-%EA%B5%AC%ED%98%84)
 
